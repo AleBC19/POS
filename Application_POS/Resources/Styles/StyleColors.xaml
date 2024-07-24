@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <LinearGradientBrush x:Key="btnLoginColor">
+        <GradientStop Color="#9900ff" Offset=".1"/>
+        <GradientStop Color="#FF2D2DBF" Offset=".6"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="layoutColor" Color="#9900ff"/>
+    <SolidColorBrush x:Key="textBoxColor" Color="#ff7fff"/>
+    <SolidColorBrush x:Key="btnCancelColor" Color="#cc0000"/>
+
+    <Color x:Key="cmbColor">#ff7fff</Color>
+
+</ResourceDictionary>

@@ -1,0 +1,176 @@
+﻿<UserControl x:Class="Application_POS.Views.Products"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Application_POS.Views"
+             mc:Ignorable="d" 
+             xmlns:icon ="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp">
+    
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid
+            Grid.Row="0"
+            Style="{StaticResource gridStyle}">
+            <local:Layout/>
+        </Grid>
+
+        <Grid
+            Grid.Row="1"
+            Margin="30,15,30,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+
+            <Grid
+                Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <Button
+                    Grid.Column="0"
+                    Style="{StaticResource btnIconMenuOptions}"
+                    Command="{Binding viewMainPage}">
+                    <icon:IconImage
+                        Icon="CircleArrowLeft"/>
+                </Button>
+
+                <Label
+                    Content="PRODUCTOS"
+                    Grid.Column="1"
+                    Style="{StaticResource letterTitleFormsLabelStyle}"/>
+            </Grid>
+
+            <Grid
+                Grid.Row="2">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Column="0"
+                    Style="{StaticResource btnIconMenuOptions}"
+                    Command="{Binding viewAddProduct}">
+                    <icon:IconImage
+                        Icon="CirclePlus"
+                        Foreground="Green"/>
+                </Button>
+                
+                <Label
+                    Content="AGREGAR PRODUCTO"
+                    Grid.Column="1"
+                    Style="{StaticResource letterTextFormsStyle}"/>
+
+                <Border
+                    Grid.Column="3"
+                    BorderThickness="2"
+                    BorderBrush="{StaticResource textBoxColor}"
+                    Height="30">
+                    <TextBox
+                        Grid.Column="3"
+                        Style="{StaticResource PlaceholderTextBoxLoginStyle}"
+                        Tag="Buscar"
+                        FontSize="16"
+                        VerticalContentAlignment="Center"
+                        />
+                </Border>
+                
+            </Grid>
+
+            <Grid
+                Grid.Row="4">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+
+                <ComboBox
+                    Grid.Column="0"
+                    Style="{StaticResource ComboBox}"/>
+
+                <ComboBox
+                    Grid.Column="2"
+                    Style="{StaticResource ComboBox}"/>
+
+                <Button
+                    Grid.Column="4"
+                    Style="{StaticResource btnBuy}">
+                    <icon:IconImage
+                        Icon="ShoppingCart"
+                        Foreground="{StaticResource textBoxColor}"/>
+                </Button>
+            </Grid>
+
+            <Grid
+                Grid.Row="6">
+
+                <DataGrid
+                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                    Style="{StaticResource CustomDataGridStyle}"
+                    ColumnHeaderStyle="{StaticResource CustomDataGridColumnHeaderStyle}"
+                    RowStyle="{StaticResource CustomDataGridRowStyle}">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn
+                            Header="#"
+                            />
+
+                        <DataGridTextColumn
+                            Header="Producto"
+                            Width="*"/>
+
+                        <DataGridTextColumn
+                            Header="Precio unitario"
+                            Width="100"/>
+
+                        <DataGridTextColumn
+                            Header="Piezas disponibles"
+                            Width="120"/>
+
+                        <DataGridTextColumn
+                            Header="Paquetes disponibles"
+                            Width="130"/>
+
+                        <DataGridTextColumn
+                            Header="Categoria"
+                            Width="100"/>
+
+                        <DataGridTextColumn
+                            Header="Sucursal"
+                            Width="100"/>
+
+                        <DataGridTextColumn
+                            Header="Acciones"
+                            Width="120"/>
+                        
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            
+        </Grid>
+    </Grid>
+</UserControl>

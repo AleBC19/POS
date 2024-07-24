@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="btnLogin" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource btnLoginColor}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5"
+                        Padding="{TemplateBinding Padding}">
+                        <ContentPresenter 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" 
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style
+        BasedOn="{StaticResource btnLogin}"
+        x:Key="btnAddProductMainPage" 
+        TargetType="Button">
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Background" Value="{StaticResource layoutColor}"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Height" Value="30"/>
+    </Style>
+
+    <Style
+        BasedOn="{StaticResource btnLogin}"
+        x:Key="btnRegisterSale" 
+        TargetType="Button">
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="Background" Value="{StaticResource layoutColor}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Height" Value="40"/>
+    </Style>
+
+    <Style x:Key="btnBuy" TargetType="Button" BasedOn="{StaticResource btnRegisterSale}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style x:Key="btnAccept"
+           TargetType="Button"
+           BasedOn="{StaticResource btnLogin}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Background" Value="{DynamicResource layoutColor}"/>
+    </Style>
+
+    <Style x:Key="btnCancel"
+       TargetType="Button"
+       BasedOn="{StaticResource btnLogin}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Background" Value="{DynamicResource btnCancelColor}"/>
+    </Style>
+</ResourceDictionary>
